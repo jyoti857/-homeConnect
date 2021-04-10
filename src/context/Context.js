@@ -16,7 +16,8 @@ const ContextProvider = ({children}) => {
   const userVideo = useRef();
   const connectionRef = useRef();
 
-  const socket = io('http://localhost:5000');
+  // const socket = io('http://localhost:5000');
+  const socket = io('https://vast-falls-82073.herokuapp.com/');
 
   useEffect(() => {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true})
