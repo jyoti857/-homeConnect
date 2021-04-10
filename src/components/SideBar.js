@@ -26,10 +26,16 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: '1px 20px',
-    border: '4px solid green'
+    background: "linear-gradient(-90deg, rgba(2,0,36,1) 0%, rgba(222,58,222,1) 27%, rgba(219,188,227,1) 100%);",
+    border: '4px solid linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(137,46,182,1) 66%, rgba(0,212,255,1) 100%);',
+    color: 'white'
   },
   margin: {marginTop: 10},
-  padding: {padding: '10px'}
+  padding: {padding: '10px'},
+  button: {
+    background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(137,46,182,1) 66%, rgba(0,212,255,1) 100%);',
+    marginTop: 10
+  }
 }))
 const Sidebar= ({children}) => {
   const {callAccepted, callEnded, name, setName, me, callUser, leaveCall } = useContext(SocketContext);
@@ -45,7 +51,9 @@ const Sidebar= ({children}) => {
               <Typography variant = 'h6' gutterBottom>Account Info</Typography>
               <TextField label = 'Name'  value = {name} onChange = {e => setName(e.target.value)} fullWidth/>
               <CopyToClipboard text = {me} className = {classes.margin}>
-                <Button variant = 'contained' color = 'primary' fullWidth>Copy your ID</Button>
+                <Button variant = 'contained' fullWidth
+                  color = 'primary'
+                >Copy your ID</Button>
               </CopyToClipboard>
             </Grid>
             <Grid item xs = {12} md ={6} className = {classes.padding}>
@@ -63,10 +71,9 @@ const Sidebar= ({children}) => {
               ):(
                 <Button
                   variant = 'contained'
-                  color = 'primary'
                   startIcon = {<Phone fontSize = 'large'/>}
                   onClick = {() => callUser(idToCall)}
-                  className = {classes.margin}
+                  className = {classes.button}
                   fullWidth
                 >Call </Button>
               )}
