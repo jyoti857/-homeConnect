@@ -20,12 +20,15 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '5px',
     marginRight: '5px',
     padding: '1px',
-    border: '2px solid black'
+    border: '2px solid black',
+    background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,58,222,1) 27%, rgba(185,121,201,1) 63%);'
   }
 }));
 const VideoPlayer = () => {
   const {stream, name, myVideo, callAccepted, callEnded, userVideo, call} = useContext(SocketContext);
   const classes = useStyles();
+  console.log(" from the my video player --> ", myVideo)
+  console.log(" from the user video player --> ", userVideo)
   return (  
     <Grid container className = {classes.gridContainer}>
       {stream && (

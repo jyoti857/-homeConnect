@@ -27,11 +27,11 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: '1px 20px',
     background: "linear-gradient(-90deg, rgba(2,0,36,1) 0%, rgba(222,58,222,1) 27%, rgba(219,188,227,1) 100%);",
-    border: '4px solid linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(137,46,182,1) 66%, rgba(0,212,255,1) 100%);',
+    border: '2px solid linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(137,46,182,1) 66%, rgba(0,212,255,1) 100%);',
     color: 'white'
   },
   margin: {marginTop: 10},
-  padding: {padding: '10px'},
+  padding: {padding: '4px'},
   button: {
     background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(137,46,182,1) 66%, rgba(0,212,255,1) 100%);',
     marginTop: 10
@@ -48,7 +48,7 @@ const Sidebar= ({children}) => {
         <form className = {classes.root} noValidate autoComplete = 'off'>
           <Grid container className = {classes.gridContainer}>
             <Grid item xs = {12} md = {6} className = {classes.padding}>
-              <Typography variant = 'h6' gutterBottom>Account Info</Typography>
+              <Typography variant = 'h9' gutterBottom>Account Info</Typography>
               <TextField label = 'Name'  value = {name} onChange = {e => setName(e.target.value)} fullWidth/>
               <CopyToClipboard text = {me} className = {classes.margin}>
                 <Button variant = 'contained' fullWidth
@@ -57,7 +57,7 @@ const Sidebar= ({children}) => {
               </CopyToClipboard>
             </Grid>
             <Grid item xs = {12} md ={6} className = {classes.padding}>
-              <Typography gutterBottom variant = 'h6'>Make a call</Typography>
+              <Typography gutterBottom variant = 'h9'>Make a call</Typography>
               <TextField label = "ID to call" value = {idToCall} onChange = {e => setIdToCall(e.target.value)} fullWidth />
               {callAccepted && !callEnded ? (
                 <Button

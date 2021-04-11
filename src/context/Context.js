@@ -31,7 +31,7 @@ const ContextProvider = ({children}) => {
       socket.on("calluser", ({from, name: callerName, signal})=> {
         setCall({isReceivingCall: true, from, name: callerName, signal})
       });
-  }, [socket]);
+  }, []);
   const answerCall = () => {
     setCallAccepted(true);
 
@@ -44,7 +44,7 @@ const ContextProvider = ({children}) => {
       userVideo.current.srcObject = currentStream;
     });
     peer.signal(call.signal);
-
+    console.log("from the peer user video ---> ", userVideo.current);
     connectionRef.current = peer;
   };
 
