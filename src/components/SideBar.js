@@ -41,7 +41,6 @@ const Sidebar= ({children}) => {
   const {callAccepted, callEnded, name, setName, me, callUser, leaveCall } = useContext(SocketContext);
   const classes = useStyles();
   const [idToCall, setIdToCall] = useState('');
-  console.log("from side bar -->", me )
   return (  
     <Grid className = {classes.container}>
       <Paper elevation = {10} className = {classes.paper}>
